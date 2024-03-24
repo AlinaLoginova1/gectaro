@@ -1,0 +1,872 @@
+{
+	"info": {
+		"_postman_id": "630657ff-246e-4279-9a2c-82366bc9ac93",
+		"name": "Gectaro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31386551"
+	},
+	"item": [
+		{
+			"name": "Запрос страницы стройка",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/companies/7323/projects/69888?expand=permissions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"companies",
+						"7323",
+						"projects",
+						"69888"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "permissions"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить все работы",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/tasks\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"tasks\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список завершенных работ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "completeness",
+						"value": "100",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n\r\n        \"completeness\": 100\r\n\r\n            }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/tasks\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"tasks\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список предстоящих работ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/tasks?per-page=0&expand=contractors,resources&filter[is_group]=false&filter[query]=&completeness=0,99",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "expand",
+							"value": "contractors,resources"
+						},
+						{
+							"key": "filter[is_group]",
+							"value": "false"
+						},
+						{
+							"key": "filter[query]",
+							"value": ""
+						},
+						{
+							"key": "completeness",
+							"value": "0,99"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить конкретную работу по id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/stages/376204/tasks/2224365\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stages",
+						"376204",
+						"tasks",
+						"2224365\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить конкретную работу по несуществующему id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/stages/376204/tasks/222436789\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stages",
+						"376204",
+						"tasks",
+						"222436789\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить список отчетов по выбранной работе",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/tasks/2224365/reports",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"tasks",
+						"2224365",
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Валидация поля (не корректные  данные)",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/tasks?per-page=0&expand=contractors,resources&filter[is_group]=false&filter[query]=YHnkl\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "expand",
+							"value": "contractors,resources"
+						},
+						{
+							"key": "filter[is_group]",
+							"value": "false"
+						},
+						{
+							"key": "filter[query]",
+							"value": "YHnkl\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Валидация поля корректные данные (не поняла как)",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Получить журнал работ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/building-log?expand=report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user&per-page=0",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"building-log"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user"
+						},
+						{
+							"key": "per-page",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить журнал работ только с фото",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/building-log?expand=report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user&per-page=0&filter[with_photo]=true",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"building-log"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user"
+						},
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "filter[with_photo]",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить журнал работ по ответственному",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/building-log?expand=report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user&per-page=0&filter[user_id]=13111\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"building-log"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user"
+						},
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "filter[user_id]",
+							"value": "13111\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить журнал работ за определенную дату",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/building-log?expand=report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user&per-page=0&filter[date_from]=22.03.2024\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"building-log"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user"
+						},
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "filter[date_from]",
+							"value": "22.03.2024\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить журнал работ за промежуток времени",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/building-log?expand=report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user&per-page=0&filter[date_from]=05.03.2024&filter[date_to]=22.03.2024\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"building-log"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "report.projectTask.contractors,report.projectTask.resources,photo.file,photo.fileMini,photo.user"
+						},
+						{
+							"key": "per-page",
+							"value": "0"
+						},
+						{
+							"key": "filter[date_from]",
+							"value": "05.03.2024"
+						},
+						{
+							"key": "filter[date_to]",
+							"value": "22.03.2024\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Экспорт журнала работ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/reports/export/ks6a\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"reports",
+						"export",
+						"ks6a\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить заявки на материалы",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/orders?expand=contractor,resourceOrderItems,resourceSummary,resourceOrderItems.resourceRequest,stock,projects&per-page=0\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "expand",
+							"value": "contractor,resourceOrderItems,resourceSummary,resourceOrderItems.resourceRequest,stock,projects"
+						},
+						{
+							"key": "per-page",
+							"value": "0\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить одну заявку по id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/resource-requests/8655876\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"resource-requests",
+						"8655876\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить ограниченное количество записей работ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/tasks?per-page=5\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "per-page",
+							"value": "5\n"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить конкретную работу по несуществуещему и невалидному id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/stages/376204/tasks/2224hgf36789\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"stages",
+						"376204",
+						"tasks",
+						"2224hgf36789\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить одну заявку по валидному но несуществующему id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/resource-requests/7489999\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"resource-requests",
+						"7489999\n"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получить одну заявку по не валидному id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "a2624266e2e188bb9c696a90f6d6c1e9",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.gectaro.com/v1/projects/69888/resource-requests/748ghf8\n",
+					"protocol": "https",
+					"host": [
+						"api",
+						"gectaro",
+						"com"
+					],
+					"path": [
+						"v1",
+						"projects",
+						"69888",
+						"resource-requests",
+						"748ghf8\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
